@@ -50,6 +50,7 @@ body {
 @media(max-width: 690px) {
     .wrapper{
         font-size: 60%;
+        width: 98%;
     }
     .fa {
         font-size: 60%;
