@@ -22,16 +22,17 @@
         <div class="row">
             <h4 class="choose">computer chooses:</h4>            
             <h4 class="choose">you choose:
-                <select name="player-chose" id="playerChoose">
+                <select name="player-chose" id="playerChooseSelect">
                     <option value="rock">rock</option>
                     <option value="paper">paper</option>
                     <option value="scissors">scissors</option>
                 </select>
+                <button id="playBtn">play</button>
             </h4>
         </div>
         <div class="row">
-            <div class="output"><i class="fa fa-hand-scissors-o" aria-hidden="true"></i></div>
-            <div class="output"><i class="fa fa-hand-rock-o" aria-hidden="true"></i></div>
+            <div class="output"><i id="computerChoose" class="" aria-hidden="true"></i></div>
+            <div class="output"><i id="playerChoose" class="" aria-hidden="true"></i></div>
         </div>
     </div>
     
