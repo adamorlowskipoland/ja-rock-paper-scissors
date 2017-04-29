@@ -9,11 +9,58 @@ body {
     background: -webkit-linear-gradient(left, #4cb4f6 8%, #007FCC 85%, #0270b2); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right, #4cb4f6 8%, #007FCC 85%, #0270b2); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#518acc', endColorstr='#9ec5e3',GradientType=1 );  /* IE6-9 */
+    padding: 0;
+    margin: 0;
 }
 
 .wrapper {
     width: 80%;
-    margin: 0 auto;
+    margin: 2rem auto;
     text-align: center;
-    border: 1px solid white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: seashell;
+    /*border: 1px solid white;*/
+}
+
+.row {
+    display: flex;
+}
+
+.player, .player--score, .choose, .output {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid orange;
+}
+
+.score {
+    float: right;
+}
+
+.output {
+    font-size: 10rem;
+}
+
+.fa {
+    vertical-align: top;
+}
+
+
+
+@media(max-width: 690px) {
+    .wrapper{
+        font-size: 60%;
+    }
+    .fa {
+        font-size: 60%;
+    }
+}
+
+@media(max-width: 350px) {
+    .wrapper{
+        font-size: 40%;
+    }
+    .fa {
+        font-size: 40%;
+    }
 }
