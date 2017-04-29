@@ -1,2 +1,2 @@
-# ja-rock-paper-scissors
+# js-rock-paper-scissors
 Rock vs Paper vs Scissors game
