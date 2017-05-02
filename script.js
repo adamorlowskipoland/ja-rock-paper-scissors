@@ -22,19 +22,23 @@ const operator = {
             domElement.className = model.options.paper;
         }
     },
-    
+    "setSelections" : function() {
+        model.playerChoose.className = model.options[model.playerChooseSelect.value];
+        this.getSelection(model.computerChoose);
+    },
     "eventListeners" : function() {
         model.playBtn.addEventListener('click', function() {
-            view.initDisplay();
+            operator.setSelections();
+            // view.initDisplay();
         });
     }
 }
 
 const view = {
     "initDisplay" : function() {
-        model.playerChoose.className = model.options[model.playerChooseSelect.value];
-        console.log(model.playerChooseSelect.value);
-        console.log(model.playerChoose);
+        // model.playerChoose.className = model.options[model.playerChooseSelect.value];
+        // console.log(model.playerChooseSelect.value);
+        // console.log(model.playerChoose);
     }
 }
 
