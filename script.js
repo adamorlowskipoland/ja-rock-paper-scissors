@@ -12,6 +12,17 @@ const model = {
 }
 
 const operator = {
+    "getSelection" : function(domElement) {
+        var pick = Math.random();
+        if (pick < 0.67 && pick > 0.33) {
+            domElement.className = model.options.scissors;
+        } else if (pick <= 0.33) {
+            domElement.className = model.options.rock;
+        } else {
+            domElement.className = model.options.paper;
+        }
+    },
+    
     "eventListeners" : function() {
         model.playBtn.addEventListener('click', function() {
             view.initDisplay();

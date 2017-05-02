@@ -39,6 +39,7 @@ body {
 
 .output {
     font-size: 10rem;
+    border: none;
 }
 
 .fa {
