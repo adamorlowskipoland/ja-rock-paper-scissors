@@ -49,33 +49,44 @@ const operator = {
         this.compareSelections();
     },
     "compareSelections" : function() {
-        if (this.computerChoice === this.playerChoice) {
-            console.log('tie');
-            this.renderScores();
-        } 
+        var key = true;
+        switch (key) {
+            case (this.computerChoice === this.playerChoice):
+                console.log('tie');
+                this.renderScores();
+                break;
+        // if computer chooses rock
+            case (this.computerChoice === "rock" && this.playerChoice === "paper"):
+                this.playerPoints++;
+                this.renderScores();
+                break;
+            case (this.computerChoice === "rock" && this.playerChoice === "scissors"):
+                this.computerPoints++;
+                this.renderScores();
+                break;
+
+        // if computer chooses paper
+            case (this.computerChoice === "paper" && this.playerChoice === "rock"):
+                this.computerPoints++;
+                this.renderScores();
+                break;
+            case (this.computerChoice === "paper" && this.playerChoice === "scissors"):
+                this.playerPoints++;
+                this.renderScores();
+                break;
+
+        // if computer chooses scissors
+            case (this.computerChoice === "scissors" && this.playerChoice === "paper"):
+                this.computerPoints++;
+                this.renderScores();
+                break;
+            case (this.computerChoice === "scissors" && this.playerChoice === "rock"):
+                this.playerPoints++;
+                this.renderScores();
+                break;
         
-        else if (this.computerChoice === "rock" && this.playerChoice === "paper") {
-            this.playerPoints++;
-            this.renderScores();
-        } else if (this.computerChoice === "rock" && this.playerChoice === "scissors") {
-            this.computerPoints++;
-            this.renderScores();
-        } 
-        
-        else if (this.computerChoice === "paper" && this.playerChoice === "rock") {
-            this.computerPoints++;
-            this.renderScores();
-        } else if (this.computerChoice === "paper" && this.playerChoice === "scissors") {
-            this.playerPoints++;
-            this.renderScores();
-        } 
-        
-        else if (this.computerChoice === "scissors" && this.playerChoice === "paper") {
-            this.computerPoints++;
-            this.renderScores();
-        } else if (this.computerChoice === "scissors" && this.playerChoice === "rock") {
-            this.playerPoints++;
-            this.renderScores();
+            default:
+                break;
         }
     },
     "renderScores" : function() {
