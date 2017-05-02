@@ -41,26 +41,52 @@ const operator = {
         } else {
             this.playerChoice = "paper";            
         }
-        console.log(this.playerChoice);
     },
     "setSelections" : function() {
         model.playerChoose.className = model.options[model.playerChooseSelect.value];
         this.getPlayerSelection();
         this.getComputerSelection(model.computerChoose);
+        this.compareSelections();
     },
     "compareSelections" : function() {
-        // if ()
-    },
-    "eventListeners" : function() {
-        model.playBtn.addEventListener('click', function() {
-            operator.setSelections();
-        });
+        if (this.computerChoice === this.playerChoice) {
+            console.log('tie');
+        } 
+        
+        else if (this.computerChoice === "rock" && this.playerChoice === "paper") {
+            console.log('player scores a point');
+            this.playerPoints++;
+        } else if (this.computerChoice === "rock" && this.playerChoice === "scissors") {
+            console.log('computer scores a point');
+            this.computerPoints++;
+        } 
+        
+        else if (this.computerChoice === "paper" && this.playerChoice === "rock") {
+            console.log('computer scores a point');
+            this.computerPoints++;
+        } else if (this.computerChoice === "paper" && this.playerChoice === "scissors") {
+            console.log('player scores a point');
+            this.playerPoints++;
+        } 
+        
+        else if (this.computerChoice === "scissors" && this.playerChoice === "paper") {
+            console.log('computer scores a point');
+            this.computerPoints++;
+        } else if (this.computerChoice === "scissors" && this.playerChoice === "rock") {
+            console.log('player scores a point');
+            this.playerPoints++;
+        }
     }
 }
 
 const view = {
     "initDisplay" : function() {
-        operator.eventListeners();
+        this.eventListeners();
+    },
+    "eventListeners" : function() {
+        model.playBtn.addEventListener('click', function() {
+            operator.setSelections();
+        });
     }
 }
 
