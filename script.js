@@ -51,30 +51,45 @@ const operator = {
     "compareSelections" : function() {
         if (this.computerChoice === this.playerChoice) {
             console.log('tie');
+            this.renderScores();
         } 
         
         else if (this.computerChoice === "rock" && this.playerChoice === "paper") {
-            console.log('player scores a point');
             this.playerPoints++;
+            this.renderScores();
         } else if (this.computerChoice === "rock" && this.playerChoice === "scissors") {
-            console.log('computer scores a point');
             this.computerPoints++;
+            this.renderScores();
         } 
         
         else if (this.computerChoice === "paper" && this.playerChoice === "rock") {
-            console.log('computer scores a point');
             this.computerPoints++;
+            this.renderScores();
         } else if (this.computerChoice === "paper" && this.playerChoice === "scissors") {
-            console.log('player scores a point');
             this.playerPoints++;
+            this.renderScores();
         } 
         
         else if (this.computerChoice === "scissors" && this.playerChoice === "paper") {
-            console.log('computer scores a point');
             this.computerPoints++;
+            this.renderScores();
         } else if (this.computerChoice === "scissors" && this.playerChoice === "rock") {
-            console.log('player scores a point');
             this.playerPoints++;
+            this.renderScores();
+        }
+    },
+    "renderScores" : function() {
+        model.computerScore.textContent = this.computerPoints;
+        model.playerScore.textContent = this.playerPoints;
+        this.checkWinner();
+    },
+    "checkWinner" : function() {
+        if (this.playerPoints > 14) {
+            alert("Player Won, congratulations");
+            model.playBtn.disabled = true;
+        } else if (this.computerPoints > 14) {
+            alert("Computer Won");
+            model.playBtn.disabled = true;
         }
     }
 }
